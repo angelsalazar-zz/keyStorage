@@ -1,0 +1,110 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+html, body{
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+.app-wrapper{
+  min-height: 100%;
+  background: #e5e5e5;
+}
+.auth-wrapper{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-wrapper{
+  margin: 10px 0;
+}
+.actions-wrapper{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+}
+.key-container{
+  display: flex;
+  flex-direction: row;
+}
+.key-container .provider,.action{
+  width: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.key-container .content{
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /*display: flex;
+  align-items: center;*/
+}
+.key-container .content .date{
+  font-style: italic;
+  font-size: 15px;
+  color: gray;
+}
+.user-info-container{
+  display: flex;
+}
+.user-info-container .icon, .user-name{
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-info-container .user-name{
+  flex-grow: 1;
+}
+.padding-4{
+  padding: 4px;
+}
+.card-title{
+  display: flex;
+  /*justify-content: space-between;*/
+  align-items: center;
+}
+.card-title .title{
+  flex-grow: 1;
+}
+.card-title .card-action{
+  width: 22px;
+}
+.card-date .date{
+  font-style: italic;
+  color: gray;
+}
+.bottom-20-right-20{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+.clickable{
+  cursor: pointer;
+}
+.card-date{
+  display: flex;
+}
+.card-date > span.date-wrapper{
+  flex-grow: 1;
+}
+.center-wrapper{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.key-card-title{
+  display: flex;
+  align-items: center;
+}
+.key-card-title .title{
+  flex-grow: 1;
+}

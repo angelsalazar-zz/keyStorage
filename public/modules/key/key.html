@@ -1,0 +1,37 @@
+<div class="w3-row w3-padding-16">
+  <div class="center-wrapper">
+    <div class="w3-third" ng-hide="edit">
+      <div class="w3-container">
+        <div class="w3-card-2 w3-white">
+          <div class="w3-container">
+            <div class="key-card-title">
+              <h3 class="title"><strong>Project:</strong> {{ project.name }}</h3>
+              <a class="clickable w3-ripple"><i class="fa fa-edit w3-large"></i></a>
+            </div>
+            <div class="key-card-content">
+              <ul class="w3-ul w3-large">
+                <li>Provider: <i class="fa {{ key.provider }}"></i></li>
+                <li>Email : {{ key.email }}</li>
+                <li><button class="w3-btn w3-indigo w3-ripple">get password</button></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w3-twothird" ng-if="edit">
+      <div class="w3-container">
+        <div class="w3-card-2 w3-white">
+          <div class="w3-container">
+            <div class="project-card-title">
+              <h3><strong>Project:</strong> </h3>
+            </div>
+            <div class="project-card-content">
+              <p class="description"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

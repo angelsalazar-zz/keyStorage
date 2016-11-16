@@ -1,0 +1,4 @@
+<input type="text" class="w3-input" ng-model="provider">
+<ul ng-if="providers && providers.length > 0">
+  <li ng-click="select(item)" ng-repeat="item in providers | filter:provider">{{item.name}}</li></ul>
+</ul>

@@ -1,0 +1,64 @@
+<div class="auth-wrapper">
+  <div class="w3-container w3-third">
+    <form name="signupForm" class="w3-container w3-card-2 w3-white">
+      <h1>Sign up</h1>
+      <div class="input-wrapper">
+        <label for="name" class="w3-label">Name <span ng-show="signupForm.name.$error.required">*</span></label>
+        <input type="text"
+                id="name"
+                class="w3-input"
+                name="name"
+                ng-model="user.name"
+                required>
+      </div>
+      <div class="input-wrapper">
+        <label for="lastname" class="w3-label">Lastname <span ng-show="signupForm.lastname.$error.required">*</span></label>
+        <input type="text"
+                id="lastname"
+                class="w3-input"
+                name="lastname"
+                ng-model="user.lastname"
+                required>
+      </div>
+      <div class="input-wrapper">
+        <label for="email" class="w3-label">
+          Email
+          <span ng-show="signupForm.email.$error.required">*</span>
+          <span ng-show="signupForm.email.$error.email">*</span>
+        </label>
+        <input type="email"
+                id="email"
+                class="w3-input"
+                name="email"
+                ng-model="user.email"
+                required>
+      </div>
+      <div class="input-wrapper">
+        <label for="password" class="w3-label">
+          Password
+          <span ng-show="signupForm.password.$error.required">*</span>
+          <span ng-show="signupForm.password.$error.minlength">*</span>
+        </label>
+        <input type="password"
+                id="password"
+                class="w3-input"
+                name="password"
+                ng-model="user.password"
+                ng-minlength="6"
+                required>
+      </div>
+      <button ng-disabled="!signupForm.$valid"
+              class="w3-btn w3-padding-xlarge w3-ripple w3-indigo"
+              ng-click="signUp()">Sign up</button>
+      <div class="actions-wrapper">
+        <div class="login-account">
+          <a ui-sref="login">Log in here</a>
+        </div>
+      </div>
+    </form>
+    <div class="w3-panel w3-red w3-animate-fading" ng-if="error">
+      <h3>Whoops something went horribly wrong!</h3>
+      <p>The email is already taken</p>
+    </div>
+  </div>
+</div>

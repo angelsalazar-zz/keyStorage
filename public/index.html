@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="dist/css/style.css">
+  <title>Key-Storage</title>
+</head>
+<body>
+  <div class="app-wrapper ng-cloak" ng-cloak ui-view></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://cdn.rawgit.com/angular-ui/ui-router/0.3.1/release/angular-ui-router.min.js"></script>
+  <script src="dist/js/angular-jwt/angular-jwt.min.js"></script>
+  <script src="dist/js/angular-storage/angular-storage.min.js"></script>
+
+  <script src="app.js"></script>
+  <!-- Factories -->
+  <script src="factories/authFactory/AuthFactory.js"></script>
+  <script src="factories/projectFactory/ProjectFactory.js"></script>
+  <script src="factories/socialFactory/SocialFactory.js"></script>
+  <script src="factories/keyFactory/KeyFactory.js"></script>
+
+
+  <!-- Directives -->
+  <script src="directives/auto-complete/auto-complete.js"></script>
+
+  <!-- Controllers -->
+  <script src="modules/home/home.js"></script>
+  <script src="modules/login/login.js"></script>
+  <script src="modules/signup/signup.js"></script>
+  <script src="modules/projects/projects.js"></script>
+  <script src="modules/project/project.js"></script>
+  <script src="modules/key/key.js"></script>
+  <script src="modules/profile/profile.js"></script>
+
+
+  <!-- <script src="modules/home/home.js"></script>
+  <script src="modules/login/login.js"></script>
+  <script src="modules/signup/signup.js"></script>
+  <script src="modules/testing/testing.js"></script> -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!-- <div class="w3-row w3-padding-16">
+  <div class="w3-container w3-threequarter">
+    <div class="w3-card-2">
+      <h1>search</h1>
+    </div>
+  </div>
+  <div class="w3-container w3-quarter">
+    <a class="w3-btn-floating-large w3-ripple w3-indigo">+</a>
+  </div>
+</div> -->
+<div class="w3-row w3-padding-16">
+  <div class="w3-container w3-quarter" ng-repeat="project in projects">
+    <div class="w3-card-2 w3-hover-shadow w3-white">
+      <div class="w3-container">
+        <div class="card-title">
+          <h3 class="title">{{ project.name }}</h3>
+          <a ui-sref="home.project({ _id : project._id })"><i class="fa fa-eye"></i></a>
+
+        </div>
+        <div class="card-date">
+          <span class="date-wrapper">
+            Created at <span class="date">{{ project.created | date}}</span>
+          </span>
+          <span class="card-action clickable"
+                ng-click="deleteProject(project._id, $index)"><i class="fa fa-times" aria-hidden="true"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<a class="bottom-20-right-20 w3-btn-floating-large w3-ripple w3-indigo"
+   ng-click="openModal()">+</a>
+
+<div id="modal" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-container">
+      <span ng-click="closeModal()"
+      class="w3-closebtn"><i class="fa fa-times"></i></span>
+      <h2>Create project</h2>
+      <form name="projectForm"  class="w3-container w3-padding-12" novalidate>
+        <div class="w3-row">
+          <label for="email" class="w3-label ">
+            Name
+            <span ng-show="projectForm.name.$error.required">*</span>
+          </label>
+          <input type="text"
+                  class="w3-input"
+                  id="name"
+                  name="name"
+                  ng-model="project.name"
+                  required>
+        </div>
+        <div class="w3-row">
+          <label for="email" class="w3-label ">
+            Description
+          </label>
+          <input type="text"
+                  class="w3-input"
+                  id="description"
+                  name="description"
+                  ng-model="project.description">
+        </div>
+        <button class="w3-btn w3-padding-xlarge w3-ripple w3-indigo w3-margin-top w3-right"
+                ng-disabled="!projectForm.$valid"
+                ng-click="createProject()"><i class="fa fa-plus"></i> Add</button>
+      </form>
+    </div>
+  </div>
+</div>

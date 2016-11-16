@@ -1,0 +1,122 @@
+<div class="w3-row w3-padding-16">
+  <div class="w3-col s12 m4 l4">
+    <div class="w3-container">
+      <div class="w3-card-2 w3-white w3-padding-8">
+        <div class="user-info-container w3-container">
+          <div class="icon">
+            <i class="fa fa-user w3-xxlarge"></i>
+          </div>
+          <div class="user-name">{{authUser().name}}</div>
+        </div>
+      </div>
+      <div class="w3-card-2 w3-white w3-padding-8 w3-margin-top w3-margin-bottom">
+        <form name="keyForm" class="w3-container">
+          <h3>Create key</h3>
+          <div class="w3-row">
+            <label for="provider" class="w3-label">
+              Provider
+              <span ng-show="keyForm.provider.$error.required">*</span>
+            </label>
+            <select name="provider"
+                    id="provider"
+                    class="w3-input"
+                    ng-model="key.provider"
+                    ng-options="item.name as item.name for item in providersList">
+                    <option value="">-Select a provider-</option>
+            </select>
+          </div>
+          <div class="w3-row">
+            <label for="email" class="w3-label ">
+              Account
+              <span ng-show="keyForm.email.$error.required">*</span>
+              <span ng-show="keyForm.email.$error.email">*</span>
+            </label>
+            <input type="email"
+                    class="w3-input"
+                    id="email"
+                    name="email"
+                    ng-model="key.email"
+                    required>
+          </div>
+          <div class="w3-row">
+            <label for="password" class="w3-label">
+              Password
+              <span ng-show="keyForm.password.$error.required">*</span>
+            </label>
+            <input type="password"
+                    class="w3-input"
+                    id="password"
+                    name="password"
+                    ng-model="key.password"
+                    required>
+          </div>
+          <button class="w3-btn w3-padding-xlarge w3-ripple w3-indigo w3-margin-top w3-right"
+                  ng-disabled="!keyForm.$valid"
+                  ng-click="createKey()"><i class="fa fa-plus"></i> Add</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="w3-col s12 m8 l8">
+    <div class="w3-container">
+      <ul class="w3-ul w3-card-4 w3-white">
+        <li class="w3-padding-16">
+          <div class="key-container">
+            <div class="provider">
+              <i class="fa fa-google w3-xxlarge"></i>
+            </div>
+            <div class="content">
+              <span><strong>Account :</strong> <a href="#">angelsalazar@hotmail.com</a></span>
+              <span class="date">12-25-1992</span>
+            </div>
+            <div class="action">
+              <span class="w3-closebtn w3-padding">&times;</span>
+            </div>
+          </div>
+        </li>
+        <li class="w3-padding-16">
+          <div class="key-container">
+            <div class="provider">
+              <i class="fa fa-twitter w3-xxlarge"></i>
+            </div>
+            <div class="content">
+              <span><strong>Account :</strong> <a href="#">angelsalazar@hotmail.com</a></span>
+              <span class="date">12-25-1992</span>
+            </div>
+            <div class="action">
+              <span class="w3-closebtn w3-padding">&times;</span>
+            </div>
+          </div>
+        </li>
+        <li class="w3-padding-16">
+          <div class="key-container">
+            <div class="provider">
+              <i class="fa fa-github w3-xxlarge"></i>
+            </div>
+            <div class="content">
+              <span><strong>Account :</strong> <a href="#">angelsalazar@hotmail.com</a></span>
+              <span class="date">12-25-1992</span>
+            </div>
+            <div class="action">
+              <span class="w3-closebtn w3-padding">&times;</span>
+            </div>
+          </div>
+        </li>
+        <li class="w3-padding-16">
+          <div class="key-container">
+            <div class="provider">
+              <i class="fa fa-paypal w3-xxlarge"></i>
+            </div>
+            <div class="content">
+              <span><strong>Account :</strong> <a href="#">angelsalazar@hotmail.com</a></span>
+              <span class="date">12-25-1992</span>
+            </div>
+            <div class="action">
+              <span class="w3-closebtn w3-padding">&times;</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
