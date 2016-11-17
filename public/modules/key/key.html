@@ -12,13 +12,17 @@
               <ul class="w3-ul w3-large">
                 <li>Provider: <i class="fa {{ key.provider }}"></i></li>
                 <li>Email : {{ key.email }}</li>
-                <li class="password">
+                <li ng-hide="keyPassword">
+                  <button class="w3-btn w3-indigo w3-ripple" ng-click="openModal()">get password</button>
+                </li>
+                <li class="password" ng-if="keyPassword">
                   <div>
-                    Password : <input type="text" id="keyPassword" ng-model="keyPassword" disabled>
+                    Password : <span id="keyPassword">asdaa</span>
                   </div>
-                  <a class="clickable w3-ripple"
-                     ng-click="copyPassword()"><i class="fa fa-copy w3-large"></i></a>
-                  <!-- <button class="w3-btn w3-indigo w3-ripple" ng-click="openModal()">get password</button> -->
+                  <button class="w3-white w3-border w3-border-blue w3-ripple w3-tooltip"
+                     ng-click="copyPassword()">
+                     <i class="fa {{ action }} w3-large"></i>
+                   </button>
                 </li>
               </ul>
             </div>

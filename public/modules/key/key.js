@@ -5,7 +5,6 @@ function KeyController($scope, $stateParams, KeyFactory, ProjectFactory, VerifyS
     .get($stateParams._projectId)
     .then(function (response) {
       $scope.project = response.data;
-      $scope.keyPassword = "asdaa";
     }, function (response) {
       console.log(response);
     })
@@ -22,6 +21,7 @@ function KeyController($scope, $stateParams, KeyFactory, ProjectFactory, VerifyS
       .authenticateUserPassword($scope.user.password, $scope.project._id, $scope.key._id)
       .then(function(response){
         $scope.keyPassword = response.data.password;
+        $scope.action = 'fa-copy';
       }, function(response){
         console.log(response);
         $scope.error = response.data;
@@ -33,10 +33,17 @@ function KeyController($scope, $stateParams, KeyFactory, ProjectFactory, VerifyS
     $scope.closeModal();
   };
   $scope.copyPassword = function(){
-    document.getElementById('keyPassword').select();
+    var kP = document.getElementById('keyPassword');
+    // Create range object
+    var range = document.createRange();
+    // set the node to select the range
+    range.selectNode(kP);
+    // add the Range to the set of window selections
+    window.getSelection().addRange(range);
     try{
       var isCopied = document.execCommand('copy');
-      console.log(isCopied)
+      if(isCopied)
+        $scope.action = 'fa-paste';
     } catch (err) {
       console.log("whoops");
     }
