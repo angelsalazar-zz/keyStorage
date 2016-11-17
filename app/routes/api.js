@@ -2,6 +2,8 @@
 var AuthCtrl    = require('../controllers/authCtrl');
 var ProjectCtrl = require('../controllers/projectCtrl');
 var KeyCtrl     = require('../controllers/keyCtrl');
+var VerifyCtrl  = require('../controllers/verifyCtrl');
+
 
 module.exports = function (app, express) {
   // Init express router
@@ -48,6 +50,9 @@ module.exports = function (app, express) {
     .delete(KeyCtrl.deleteById);
   /** KEY CRUD END **/
 
+  api
+    .route('/projects/:_projectId/keys/:_keyId/showpassword')
+    .post(VerifyCtrl.showPassword);
   // api.get('/welcome',function(req, res) {
   //   res
   //     .status(200)

@@ -1,6 +1,6 @@
 // Dependecies
 var mongoose = require('mongoose');
-
+var encryptor = require('../../classes/encryptor/encryptor');
 
 // Getting Schema object
 var Schema  = mongoose.Schema;
@@ -47,14 +47,8 @@ KeySchema.pre('save',function(next){
   // If the key password has not been updated
   if(!key.isModified('password')) return next();
 
-  //http://stackoverflow.com/questions/22546458/how-do-i-create-an-encrypt-and-decrypt-function-in-nodejs
-  // If key password has been updated, then hash it
-  // bcrypt.hash(key.password, null, null, function(err, hash) {
-  //     if(err) return next(err);
-  //
-  //     key.password = hash;
-  //     next();
-  // });
+  key.password = encryptor.encrypt(key.password);
+  next();
 })
 
 module.exports = mongoose.model('Project', ProjectSchema);

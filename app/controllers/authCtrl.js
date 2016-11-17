@@ -57,7 +57,6 @@ var logIn = function(req, res){
   // Gettimg sent credentials
   var email =  req.body.email;
   var password = req.body.password;
-  console.log(email)
   // Retrieving User info by email
   User
     .findOne(

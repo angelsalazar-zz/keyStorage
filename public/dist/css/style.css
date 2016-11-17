@@ -99,12 +99,16 @@ html, body{
   display: flex;
   justify-content: center;
 }
-
-
 .key-card-title{
   display: flex;
   align-items: center;
 }
 .key-card-title .title{
+  flex-grow: 1;
+}
+.password{
+  display: flex;
+}
+.password > div{
   flex-grow: 1;
 }
