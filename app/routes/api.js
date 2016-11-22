@@ -3,7 +3,7 @@ var AuthCtrl    = require('../controllers/authCtrl');
 var ProjectCtrl = require('../controllers/projectCtrl');
 var KeyCtrl     = require('../controllers/keyCtrl');
 var VerifyCtrl  = require('../controllers/verifyCtrl');
-
+var UserCtrl    = require('../controllers/userCtrl');
 
 module.exports = function (app, express) {
   // Init express router
@@ -53,6 +53,10 @@ module.exports = function (app, express) {
   api
     .route('/projects/:_projectId/keys/:_keyId/showpassword')
     .post(VerifyCtrl.showPassword);
+
+  api
+    .route('/users/:_id')
+    .get(UserCtrl.getById)
   // api.get('/welcome',function(req, res) {
   //   res
   //     .status(200)

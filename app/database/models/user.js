@@ -25,7 +25,6 @@ var UserSchema = new Schema({
     select : false            // when querying user, exclude user's password
   },
   projects : [{ type: Schema.Types.ObjectId, ref: 'Project' }]
-  // keys : [{ type: Schema.Types.ObjectId, ref: 'Key' }]
 });
 
 // before save the user, encrypt user's password
